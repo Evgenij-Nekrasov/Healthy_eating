@@ -1,0 +1,133 @@
+.header__logo {
+   font-family: "sonos-logoregular";
+   font-size: 27px;
+   letter-spacing: 0.02em;
+   text-transform: uppercase;
+   user-select: none;
+}
+.right-word {
+   display: inline-block;
+   text-align: right;
+}
+.color-move {
+   margin-right: 10px;
+   background: rgb(78, 201, 203);
+   background: linear-gradient(
+      -90deg,
+      rgb(107, 238, 240) 0%,
+      rgba(135, 230, 131, 1) 56%,
+      rgba(85, 185, 67, 1) 100%
+   );
+   color: transparent;
+   -webkit-background-clip: text;
+   -webkit-animation: animate-logo;
+   -webkit-animation-delay: 0;
+   -webkit-animation-duration: 7s;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes animate-logo {
+   0% {
+      background-position: 0 50px;
+   }
+   100% {
+      background-position: 50px 0;
+   }
+}
+/* Cuboid Positioning */
+.cuboid,
+.cuboid-face {
+   display: inline-block;
+   background: rgb(0, 0, 0);
+   background: linear-gradient(
+      -90deg,
+      rgba(121, 253, 255, 1) 0%,
+      rgba(135, 230, 131, 1) 56%,
+      rgba(85, 185, 67, 1) 100%
+   );
+}
+
+.cuboid {
+   font-size: 2.5rem;
+   position: relative;
+   height: 0.5em;
+   width: 1em;
+   vertical-align: middle;
+   transform-style: preserve-3d;
+   transform: rotateX(-40deg) rotateY(-45deg);
+   animation: rotateCuboid 3s ease-in-out infinite;
+}
+
+.cuboid-face {
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   border: 0.08em solid #eee;
+}
+
+.cuboid-face-top,
+.cuboid-face-bottom {
+   height: 1em;
+}
+
+.cuboid-face-front {
+   transform: translateZ(0.5em);
+   animation: faceFront 3s ease-in-out infinite;
+}
+
+.cuboid-face-back {
+   transform: rotateY(180deg) translateZ(0.5em);
+   animation: faceBack 3s ease-in-out infinite;
+}
+
+.cuboid-face-left {
+   transform: rotateY(-90deg) translateZ(0.5em);
+   animation: faceLeft 3s ease-in-out infinite;
+}
+
+.cuboid-face-right {
+   transform: rotateY(90deg) translateZ(0.5em);
+   animation: faceRight 3s ease-in-out infinite;
+}
+
+.cuboid-face-top {
+   transform: rotateX(90deg) translateZ(0.5em);
+}
+
+.cuboid-face-bottom {
+   transform: rotateX(-90deg);
+}
+
+/* Animations */
+
+@keyframes faceFront {
+   50% {
+      transform: translateZ(0.7em);
+   }
+}
+
+@keyframes faceBack {
+   50% {
+      transform: rotateY(180deg) translateZ(0.7em);
+   }
+}
+
+@keyframes faceLeft {
+   50% {
+      transform: rotateY(-90deg) translateZ(0.7em);
+   }
+}
+
+@keyframes faceRight {
+   50% {
+      transform: rotateY(90deg) translateZ(0.7em);
+   }
+}
+
+@keyframes rotateCuboid {
+   100% {
+      transform: rotateX(-40deg) rotateY(-405deg);
+   }
+}
